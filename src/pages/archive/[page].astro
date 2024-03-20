@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro";
+import CardTemplate from "../../components/CardTemplate.astro";
+import DefaultLayout from "../../layout/DefaultLayout.astro";
+import {getCollection} from "astro:content"
+export const getStaticPaths = (async({paginate}) => {
+    
+    const posts = await getCollection("posts")
+    const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
+    return paginate(postsSorted, {pageSize: 3});
+}) satisfies GetStaticPaths;
+const {page} = Astro.props
+const res = await fetch("http://localhost:4321/api/categories.json")   
+const categories = await res.json()
+
+---
+
+<DefaultLayout>
+	<section transition:name="archive" class="flex flex-col md:flex-row flex-wrap w-fit mx-auto bg-lime-50 md:p-4 ">
+		<h2 class="text-3xl p-8 pb-0 w-full text-center">Archive</h2>
+        <div  class="w-full flex flex-row gap-1 p-4 flex-wrap">
+            {categories.categories.sort().map((c)=>(<a class="bg-lime-200 rounded-md p-1 text-center text-md hover:bg-lime-400" href={`/category/${c}`}>{c}</a>))}
+        </div>
+		 {page?.data.map((p)=>(<CardTemplate title={p.data.title} categories={p.data.category} slug={p.slug} publishDate={p.data.publishDate}></CardTemplate>))}
+	</section>
+    <div class="p-4 pb-8 flex flex-row justify-center w-full bg-lime-50">
+        <div class="flex flex-row gap-2">
+            {page?.url.prev ? <a class="px-2 py-1 bg-lime-400 w-fit hover:bg-lime-500 cursor-pointer" href={page.url.prev}>Previous page</a> : null}
+            {page?.url.next ? <a class="px-2 py-1 bg-lime-400 w-fit hover:bg-lime-500 cursor-pointer" href={page.url.next}>Next page</a> : null} 
+        </div>
+     </div>
+</DefaultLayout>

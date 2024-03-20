@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import Card from "../../components/CardTemplate.astro";
+import DefaultLayout from "../../layout/DefaultLayout.astro";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async () => {
+    const fetchPosts = await getCollection("posts")
+    const res = await fetch("http://localhost:4321/api/categories.json")   
+    const categories = await res.json()
+    return categories.categories.map((c)=>{ 
+      return {params: {page: c}, props: {posts: fetchPosts.filter((p)=>{ return p.data.category.includes(c)}).sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse(), countries: categories}}     
+    })
+}) satisfies GetStaticPaths;
+const {posts, countries} = Astro.props
+const {page} = Astro.params
+const capitalLetter = page.charAt(0).toUpperCase() + page.slice(1)
+---
+
+<DefaultLayout>
+  <section class="flex flex-row flex-wrap w-fit mx-auto  md:p-4 bg-lime-50">
+    	<h2 class="text-3xl p-8 pb-0 w-full text-center">Country: {capitalLetter} </h2>
+      <div class="w-full flex flex-row gap-1 p-4 flex-wrap">
+              {countries.categories?.map((c)=>(<a class="bg-lime-200 rounded-md p-1 text-center text-md hover:bg-lime-400" href={`/category/${c}`}>{c}</a>))}
+      </div>
+ {posts?.map((p)=>(<Card title={p.data.title} categories={p.data.category} slug={p.slug} publishDate={p.data.publishDate}></Card>))}
+  </section>
+
+  
+</DefaultLayout>
+
