@@ -1,3 +1,16 @@
 html {
   scrollbar-gutter: stable both-edges;
 }
+
+hr{
+ margin-bottom: 2rem;
+ height: 500px;
+}
+
+#footnote-label{
+	display: none;
+}
+
+#källor{
+	margin-top: 1rem;
+}

@@ -1,29 +1,25 @@
 ---
-const {title, slug, categories, publishDate} = Astro.props
+const {title, excerpt, slug, categories, publishDate, image} = Astro.props
 const today = new Date()
 import { fade } from "astro:transitions"
+const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
 ---
-<div class=" md:w-1/3 p-4">
-<article class="md:p-4">
-        <h3 class="text-2xl pb-2">{title}</h3>
-        <img transition:name={slug} src="/images/desert.jpg" alt="title"/>
-        <div class="flex flex-row  gap-4 p-2 md:p-4 border-b-2 border-b-lime-100 items-center ">
-            <img  class="rounded-full w-12 h-12" src="/images/desert.jpg" alt="title"/>
-            <div class="flex flex-col text-xs gap-1 b">
-                <h4 >Name</h4>
-                <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} days ago</time>
-                <div class="flex flex-row gap-2 flex-wrap">
-                    {
-                    categories.map((p)=>(
-                        <a href={`/category/${p.toLocaleLowerCase()}`} class="bg-lime-200 rounded-md p-1 text-center text-xs hover:bg-lime-400 cursor-pointer">{p}</a>
-                        ))
-                    }
-                </div>
+<div class=" lg:w-1/2 mx-auto ">
+    <article transition:name={`article-${slug}`}  class="p-4 ">
+            <h3  class="text-3xl md:font-normal md:text-2xl hover:underline underline-offset-2  pb-2"><a href={`/posts/${slug}`}>{title}</a></h3>
+            <img class="w-full h-64 object-cover" src={image} alt="title"/>
+            <div class="flex flex-row  gap-4 py-2 items-center ">
+                <img  class="rounded-full w-12 h-12 hidden" src="/images/desert.jpg" alt="title"/>
+               <!--  <div class="flex flex-col text-sm  b">
+                    <h4 >Jesper Holmlund</h4>
+                    <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} days ago</time>
+                    <div set:html={categoriesFixed} class="flex flex-row gap-1 flex-wrap">
+                    </div>
+                </div>-->
             </div>
-        </div>
-        <p class=" text-sm line-clamp-4 md:px-4 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, voluptatem error nisi tempore necessitatibus repudiandae deleniti omnis veritatis quis recusandae beatae impedit, harum odio, neque veniam. Commodi harum doloremque possimus.</p>
-        <div class="md:p-4 py-2">
-            <a href={`/posts/${slug}`} class="text-sm px-2 py-1 bg-lime-400 w-fit block hover:bg-lime-500 cursor-pointer">Läs mer</a>
-        </div>
- </article>
+	    <p class=" text-sm line-clamp-4">{excerpt}</p>
+            <div class="py-2">
+                <a href={`/posts/${slug}`} class="text-md text-sky-800 bg-sky-400 px-2 w-fit block hover:text-slate-800 cursor-pointer">Läs mer</a>
+            </div>
+    </article>
  </div>

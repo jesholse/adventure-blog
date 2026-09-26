@@ -2,10 +2,15 @@
 
 ---
 
-<nav>
-    <ul class="flex flex-row gap-2 justify-end p-4 ">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/archive/1">Archive</a></li>
+<nav class=" text-black px-4 flex md:flex-row flex-col justify-end md:items-center items-end">
+    <ul class="flex md:flex-row flex-col gap-2 justify-end md:p-4  text-right">
+        <li><a href="/">Hem</a></li>
+        <li><a href="/about">Om sidan</a></li>
+        <li><a href="/archive/1">Arkiv</a></li>
     </ul>
+<div id="searchBox" class="relative">
+	 	<input autocomplete="off" id="search" class="border-2" placerholder="Snabbsök" name="q" type="search" hx-get="/search/posts"  hx-trigger="input delay:500ms, search" hx-target="#result" hx-push-url="false"  hx-params="q"></input>
+		<div id="result" class="w-full absolute shadow-lg [&>*:nth-child(even)]:bg-slate-50 [&>*:nth-child(odd)]:bg-white"></div>
+ 	</div>
+	<!--	<div hx-get="/search/posts" hx-target="#result">x</div> -->
 </nav>

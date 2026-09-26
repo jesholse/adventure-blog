@@ -10,22 +10,22 @@ export const getStaticPaths = (async() => {
 }) satisfies GetStaticPaths;
 const {post} = Astro.props;
 const {Content} = await post.render()
-console.log(post.slug)
+
 ---
 <DefaultLayout>
-    <!-- <section id="hero" class="flex flex-col lg:flex-row  bg-blue-100">
+    <section id="hero" class="flex flex-col lg:flex-row  bg-blue-100">
 		<div id="img-container" class="w-full lg:w-2/4">
 			<img class="w-full" class="" src={post.data.image}/>
 		</div>
 		<div id="hero-text" class="w-full  md:w-2/3 flex flex-col justify-center mx-auto p-4 lg:px-16 ">
-            <h1 transition:name={post.data.title} class="text-3xl w-fit">{post.data.title}</h1>
 			<div class="w-fit mx-auto ">
+				<h1 class="text-3xl w-fit">{post.data.title}</h1>
 				<p class="text-md pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 			</div>
             <div class="flex flex-row gap-4  items-center  ">
-                <img class="rounded-full w-10 h-10" src="/images/desert.jpg" alt="title"/> 
+               <!-- <img class="rounded-full w-10 h-10" src="/images/desert.jpg" alt="title"/> -->
                 <div class="flex flex-col text-sm gap-1">
-                    <h4 >Jesper h</h4>
+                    <h4 >Jesper Holmlund</h4>
                     <time>2011/01/01</time>
                                     <div class="flex flex-row gap-2">
                     {
@@ -37,26 +37,25 @@ console.log(post.slug)
                 </div>
             </div>
 		</div>
-	</section> -->
-	<section transition:name={`article-${post.slug}`}  class="p-4 shadow-lg shadow-neutral-400 lg:mt-4 px-4 lg:w-2/4 md:mx-auto md:text-md [&>p]:mb-4 [&>h2]:text-xl [&>h2]:text-slate-800 [&>h3]:text-xl  [&>p>img]:mb-2 [&>p>sup]:text-blue-600 [&>.footnotes>ol]:list-decimal [&>.footnotes>ol]:px-4 [&>.footnotes>ol]:break-words  [&>ol>li]:text-slate-600  [&>ol]:pb-4 [&>ol>li]:underline-offset-4">
-        <h1 class="text-4xl pb-4">{post.data.title}</h1>
+	</section>
+	<section class="lg:mt-4 p-4 md:w-2/3 md:mx-auto md:text-md [&>p]:mb-4 [&>h2]:text-2xl [&>p>img]:mb-2 [&>p>sup]:text-blue-600 [&>.footnotes>ol]:list-decimal">
+        <h3 class="text-3xl">{post.data.subTitle}</h3>
         <Content></Content>
-            <div class="flex flex-col text-sm gap-1 items-end">
-                <div>
-                    <h4> Av Jesper Holmlund</h4>
-                    <time>2011/01/01</time>
-                </div>
-                <div class="flex flex-row gap-2">
-			   <b>Kategorier:</b>
+	</section>
+        <section class="lg:mt-4 p-4 md:w-2/3 md:mx-auto md:text-md"+>
+           <div class="flex flex-col text-sm gap-1 border-t-2 pt-4">
+		   <div>
+			   <h4 >Jesper Holmlund</h4>
+			   <time>2011/01/01</time>
+		   </div>
+		   <div class="flex flex-row gap-2">
+			   <span>Kategorier:</span>
                     {
                     post.data.category.map((p)=>(
                         <a href={`/category/${p.toLocaleLowerCase()}`} class="text-slate-500 hover:text-slate-800 ">{p}</a>
                         ))
                     }
                   </div>
-             </div>
-	</section>
-	<section class="lg:mt-4 px-4 md:w-2/4 md:mx-auto md:text-md">
-		
+                </div>
 	</section>
 </DefaultLayout>

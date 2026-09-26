@@ -6,43 +6,46 @@ import {getEntry, getCollection} from "astro:content";
 const about = await getEntry("pages", "about")
 const posts = await getCollection("posts")
 const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
-postsSorted.length = 3
+postsSorted.length = 6
 const {Content} = await about.render()
-
+console.log(postsSorted[0].body)
 ---
 
 <DefaultLayout>
-	<section id="hero" class="flex flex-col md:flex-row bg-white ">
-		<div id="img-container" class="md:w-2/3">
-			<img class="" src="/images/desert.jpg"/>
+<!-- 	<section id="hero" class="flex flex-col md:flex-row lg:p-8 p-0">
+		<div id="img-container" class="md:w-1/3 md:p-4">
+		 <img alt="logo" class="" src="/images/Bibliophile-bro.svg"/>
 		</div>
-		<div id="hero-text" class=" md:w-1/3 flex flex-col justify-center mx-auto bg-lime-100">
-			<div class="w-fit mx-auto p-4 md:px-16">
-				<h1 class="text-3xl w-fit">Lorem ipsum dollor</h1>
-				<p class="text-sm text-slate-600 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-				<a href="/about" class="px-2 py-1 bg-lime-400 w-fit hover:bg-lime-500 cursor-pointer">More about</a>
+		<div id="hero-text" class=" md:w-2/3 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-2  pt-4 p-4 ">
+			<div class="md:w-3/4 w-full">
+				<h1 class="text-3xl w-fit mb-2">Lorem ipsum dollor</h1>
+					<p class="text-sm text-slate-600 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+				<a href="/about" class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500">Om sidan</a>
 			</div>
 		</div>
 	</section>
-	<section transition:name="about" id="about" class="flex flex-col-reverse md:flex-row-reverse bg-lime-100">
-		<div id="img-container" class="md:w-2/4 md:block hidden">
-			<img class="" src="/images/road.jpg"/>
-		</div>
-		<div id="about-text" class=" md:w-2/4 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-4 pb-4 px-4 pt-4">
-			<img class="rounded-3xl object-cover h-80 w-80" src="/images/profile.jpg"/>
-			<div class="w-fit">
-				<p class="text-md w-fit">{about.data.name}</p>
-				<p class="text-sm text-slate-600">{about.data.email}</p>
-				<p class="text-sm text-slate-600 pb-2">{about.data.number}</p>
-				<a href="/about" class="text-sm px-2 py-1 bg-lime-400 w-fit hover:bg-lime-500 cursor-pointer">Contact</a>
+	<section> -->
+		<div class="flex flex-col gap-4 md:flex-row p-4 bg-blue-50 hidden">
+			<div class="md:w-1/3 w-full">
+				<h3 class="text-2xl">Syfte</h3>
+				<p class="mt-2">Denna sida syftar till att lyfta fram bortglömd historia med fokus på Skellefteå med omnejd. Bortglömda historier kan innebära historier om fabriker, hus,  människor, byar och levnadsöden. </p>
 			</div>
-		</div>
+			<div class="md:w-1/3 w-full">
+				<h3 class="text-2xl">Böcker och skrifter</h3>
+				<p class="mt-2">Det mesta som står på denna sida kommer från böcker och tidskrifter från bibliotek och museeum. Därför finns det goda förutsättningar till att gräva vidare på egen hand.</p>	
+			</div>
+			<div class="md:w-1/3 w-full ">
+				<h3 class=" text-2xl">Kontakt</h3>
+				<p class="mt-2">Det går att kontakta mig via mail. Då på adressen jesper@nvb.</p>
+			</div>
+	       	</div>
 	</section>
-	<section transition:name="archive" class="flex flex-col md:flex-row flex-wrap w-fit mx-auto bg-lime-50 md:p-4 ">
-		<h2 class="text-3xl p-4 pb-0 w-full text-center">Lorem ipsum</h2>
-		{postsSorted?.map((p)=>(<CardTemplate title={p.data.title} categories={p.data.category} slug={p.slug} publishDate={p.data.publishDate}></CardTemplate>))}
+
+	<section transition:name="archive" class="flex flex-col md:flex-col flex-wrap w-fit mx-auto   ">
+		<!--<h2 class="text-3xl p-4 pb-0 w-full text-center">Lorem ipsum</h2> -->
+		{postsSorted?.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
 	</section>
-	<section class="bg-lime-50 p-4 pb-8 ">
-		<h3 class="bg-lime-400 text-xl w-fit mx-auto px-8"><a href="/archive/1">Arkiv</a></h3>
+	<section class="p-4 pb-8 ">
+		<h3 class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500 mx-auto"><a href="/archive/1">Arkiv</a></h3>
 	</section>
 </DefaultLayout>

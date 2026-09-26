@@ -6,22 +6,23 @@ const {Content} = await about.render()
 ---
 
 <DefaultLayout>
-	<section transition:name="about" id="about" class="flex flex-col-reverse md:flex-row-reverse bg-lime-100">
-		<div id="img-container" class="w-full md:w-2/4 md:block hidden">
-			<img class="" src="/images/road.jpg"/>
+ <!--<section transition:name="about" id="about" class="flex flex-col md:flex-row lg:p-8 p-0">
+		<div id="img-container" class="w-full md:w-2/4  md:p-4">
+			<img class="" src="https://www.regionfakta.com/globalassets/upload/kartor/lanskartor_forsta_24.gif"/>
 		</div>
-		<div id="about-text" class=" md:w-2/4 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-2 px-4 pt-4">
-			<img class="rounded-3xl object-cover h-80 w-80" src="/images/profile.jpg"/>
-			<div class="w-fit">
-				<p class="text-md w-fit">{about.data.name}</p>
-				<p class="text-sm text-slate-600">{about.data.email}</p>
-				<p class="text-sm text-slate-600 pb-2">{about.data.number}</p>
+		<div id="about-text" class=" md:w-2/4 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-2  pt-4 p-4 ">
+			img class="rounded-3xl object-cover h-80 w-80 md:block hidden" src="/images/profile.jpg"/>
+			<div class="md:w-3/4 w-full">
+				<h3 class="text-xl w-fit">{about.data.name}</h3>
+				<p class="text-md text-slate-600">{about.data.email}</p>
+				<p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolorum ipsa beatae, nulla dolores officiis neque alias. Minima molestias dolor quod eum, similique aspernatur voluptatem nulla doloremque quisquam magnam aliquid?</p>
 			
 			</div>
 		</div>
-	</section>
+ </section>-->
     
-	<section class="p-4 md:w-1/2 md:mx-auto md:text-xl  [&>p]:mt-4">
+	<section class="px-4 md:w-2/3 md:mx-auto md:text-md  [&>p]:mt-4">
+		<h2 class="text-3xl p-4 pb-0 w-full text-center">Lorem ipsum</h2>
        <Content></Content>
     </section>
 </DefaultLayout>
