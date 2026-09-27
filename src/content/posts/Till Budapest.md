@@ -1,12 +1,12 @@
 ---
-title: "Domushuset"
-subTitle: "En av Sveriges största terpentinfabriken"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-category: ["Långviken"]
+title: "Till Budapest"
+subTitle: "Lorem ipsum"
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus, massa quis vestibulum pharetra, sem sem lobortis dui, at rutrum est enim ac tortor. Duis tincidunt posuere arcu ac egestas. Maecenas in molestie libero. Sed a mi in massa luctus elementum vel volutpat turpis. Pellentesque vehicula in mi non ultricies. Donec fringilla sagittis nisl vel varius. Maecenas at lacus eleifend nibh ultricies tempus. Phasellus enim diam, fringilla ac pretium nec, semper in est"
+category: ["Ungern"]
 image: "https://m.media-amazon.com/images/I/81sMkFrM5IL._SY522_.jpg"
-publishDate: 2024-05-03
+publishDate: 2026-09-26
 ---
-### Innehåll
+## Innehåll
 1. <ins>[Bakgrund](#bakgrund)</ins>
 1. <ins>[Sjömanshuset](#sjömanshuset)</ins>
 2. <ins>[Det första domushuset](#det-första-domushuset)</ins>
@@ -31,7 +31,7 @@ Domus etablerades första gången 1958 bredvid Tempo. Tempo låg i <mark>Avenyhu
 Endast drygt ett år efter att första domushuset revs står andra domushuset klart. Byggnaden blir mer homogen. Pelare sträcker sig från husknut till husknut. En tydlig Domusskylt installeras på hörnet mot Tempo. Huset ger ett modernarna intryck med stora fönster och en fasad med tydligt tegelmönster. På andra sidan Hörnellgatan går det att se köpmannahuset.
 ![Nya domushuset](https://cust.kulturhotell.se/c61/files/fullsize/187a3c3e9aa75b992afd4bce8cca3ab7.jpg)
 
-### Källor
+## Källor
 [^1]: [Margaretas matsalar](https://www.folkrorelsearkivet.se/wp-content/uploads/2020/04/margaretas-matsalar_low.pdf)
 [^2]: https://samlingar.skellefteamuseum.se/objects/c61-156019/?sq=domus&offset=20
 [^3]: https://www.sjomanshus.se/omoss/historik/

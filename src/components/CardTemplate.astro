@@ -6,20 +6,18 @@ const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 h
 ---
 <div class=" lg:w-1/2 mx-auto ">
     <article transition:name={`article-${slug}`}  class="p-4 ">
-            <h3  class="text-3xl md:font-normal md:text-2xl hover:underline underline-offset-2  pb-2"><a href={`/posts/${slug}`}>{title}</a></h3>
-            <img class="w-full h-64 object-cover" src={image} alt="title"/>
-            <div class="flex flex-row  gap-4 py-2 items-center ">
+            <h3  class="text-3xl text-blue-900 md:font-normal md:text-2xl hover:underline underline-offset-2  "><a href={`/posts/${slug}`}>{title}</a></h3>
+            <img class="w-full h-64 object-cover" src={image} alt="title"/> 
+            <div class="flex flex-row  gap-4 items-center ">
                 <img  class="rounded-full w-12 h-12 hidden" src="/images/desert.jpg" alt="title"/>
-               <!--  <div class="flex flex-col text-sm  b">
-                    <h4 >Jesper Holmlund</h4>
-                    <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} days ago</time>
-                    <div set:html={categoriesFixed} class="flex flex-row gap-1 flex-wrap">
-                    </div>
-                </div>-->
+                <div class="text-sm ">
+                    Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} dagar sedan</time>
+                    <!--<div set:html={categoriesFixed} class="flex flex-row gap-1 flex-wrap"></div> -->
+                </div>
             </div>
-	    <p class=" text-sm line-clamp-4">{excerpt}</p>
-            <div class="py-2">
-                <a href={`/posts/${slug}`} class="text-md text-sky-800 bg-sky-400 px-2 w-fit block hover:text-slate-800 cursor-pointer">Läs mer</a>
+	    <p class=" text-lg line-clamp-4">{excerpt}</p>
+            <div class="py-1">
+                <a href={`/posts/${slug}`} class="text-md text-white bg-blue-500 px-2 w-fit block hover:bg-slate-800 cursor-pointer">Läs mer</a>
             </div>
     </article>
  </div>
