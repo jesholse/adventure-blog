@@ -39,7 +39,8 @@ console.log(post.slug)
 		</div>
 	</section> -->
 	<section transition:name={`article-${post.slug}`}  class="p-4  lg:mt-4 px-4 lg:w-2/4 md:mx-auto md:text-lg [&>p]:mb-4 [&>h2]:text-xl [&>h3]:text-slate-800 [&>h2]:text-blue-900 [&>h2]:font-medium [&>h3]:text-xl  [&>p>img]:mb-2 [&>p>sup]:text-blue-600 [&>.footnotes>ol]:list-decimal [&>.footnotes>ol]:px-2 [&>.footnotes>ol]:break-words  [&>ol>li]:text-slate-600  [&>ol]:pb-4 [&>ol>li]:underline-offset-4">
-        <h1 class="text-4xl pb-4 text-blue-900">{post.data.title}</h1>
+        <h1 class="text-4xl text-blue-900">{post.data.title}</h1>
+        <h2 class="pb-4">{post.data.subTitle}</h2>
         <Content></Content>
             <div class="flex flex-col text-sm gap-1 items-end">
                 <div>

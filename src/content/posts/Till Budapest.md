@@ -1,38 +1,38 @@
 ---
-title: "Till Budapest"
-subTitle: "Lorem ipsum"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus, massa quis vestibulum pharetra, sem sem lobortis dui, at rutrum est enim ac tortor. Duis tincidunt posuere arcu ac egestas. Maecenas in molestie libero. Sed a mi in massa luctus elementum vel volutpat turpis. Pellentesque vehicula in mi non ultricies. Donec fringilla sagittis nisl vel varius. Maecenas at lacus eleifend nibh ultricies tempus. Phasellus enim diam, fringilla ac pretium nec, semper in est"
+
+title: "Med båt på Donau"
+subTitle: "Budapest i oktobermörkret"
+excerpt: "Jag var i Budapest i oktober och fick uppleva en vacker båtresa på Donau. Staden lyste vackert. Särskilt parlamentbygganden som ser ut som ett slott taget ur en Disneyfilm."
 category: ["Ungern"]
-image: "https://m.media-amazon.com/images/I/81sMkFrM5IL._SY522_.jpg"
-publishDate: 2026-09-26
+image: "/public/images/budapest-cruise/parlamentet-disney.jpg"
+publishDate: 2026-10-04
+
 ---
-## Innehåll
-1. <ins>[Bakgrund](#bakgrund)</ins>
-1. <ins>[Sjömanshuset](#sjömanshuset)</ins>
-2. <ins>[Det första domushuset](#det-första-domushuset)</ins>
-3. <ins>[Det andra domushuset](#det-andra-domushuset)</ins>
 
-## Bakgrund
-Det har funnits två stycken epoker med Domushus i Skellefteå. Båda Domushusen låg på samma ställe i korsningen Nygatan - Hörnellgatan. Idag ligger citykompaniet på platsen där Domus en gång låg. I anslutning till Citykompaniet finns ett parkeringshus (byggt xxxx). I folkmun, innan parkeringshuset, kallades denna parkeringen för Domusparkeringen och där låg en gång i tiden Margaretas Matsalar. Ett hus som tidigare stått i Frostkåge. Det är oklart hur huset såg ut i Frostkåge. Efter flytten till Skellefteå blev huset inflyttningsklart 1876 och påminde en del om stadshuset.[^1]. På denna tid var dock parkeringen i huvudsak en parkering till Tempo.
+Ungern känns realtivt nytt, ganska bortglömt och en stad på uppgång. Nu valde jag att åka till Budapest i oktober och inte under de varmare månaderna.
 
-## Sjömanshuset
-Många kuststäder hade sjömanshus. I sjömanshusen dokumenterades sjömän och vilka fartyg de hade mönstrat på. Sjömanshus är därför jämte kyrkböckerna ypperliga register för släktforskare. Sjömanshusen fungerade också som ekonomisk stöd till orkeslösa sjömän och änkor. Senare kom dessa funktioner att tas över av statliga myndigheter och fackliga organisationer. I slutet av 60-talet kom sjömanshusen att slutligen upphöra.[^3] Därför är det ingen slump att Skellefteås Sjömanshus revs denna tid för att göra plats åt moderna inslag i stadens centrum. Skellefteås Sjömanshus slutade dock som instution redan 1939.[^4]
+Vädret var fortfarande stabilt på runt 20 grader under dagarna och ner mot 15 senare på kvällen. Jackan hängde fint på en galge i hotellrummet under hela resan.
 
-![Sjömanshuset på Domusparkeringen](https://cust.kulturhotell.se/c61/files/fullsize/835f06e34abbfa2c29b5aefcf1d1f031.jpg)
-*Sjömanshuset som revs 1965 när nya Domushuset byggdes*
+Det var många turister men aboslut inte fullt. Jag upplevde aldrig trängsel någonstans och kunde vandra runt fritt i staden och till olika attraktioner.
 
-## Det första domushuset
-Domus etablerades första gången 1958 bredvid Tempo. Tempo låg i <mark>Avenyhuset</mark> där vi idag finner Åhlens. Domus kom att stå i 7 år och rivs alltså redan 1965 i syfte att bygga upp ett nytt hus åt Domus. Detta hus står klart 1966.[^2]
+## Båtturer på floden Donau
 
-![Gamla domushuset](https://cust.kulturhotell.se/c61/files/fullsize/7f0c3e99367c7d2cd75ab0bb3793c35c.jpg)
-*Gamla domushuset till vänster om Tempo ner mot korsningen Nygatan - Hörnellgatan*
+Båtturer på floden Donau är en populär turistattraktion. Med start vid Elisabetbron (Erzsébet híd) och längs norrut på östra sidan av Donau (sidan som kallas för Pest) finns det flera kryssningar att välja mellan. Mitt val föll på [<u>Legenda Cruis</u>](https://legenda.hu/en). Det var enkelt att köpa biljett. Det gick göra både på telefonen och på plats. Jag åkte en vanlig tur på en timme och där en dryck var inkluderat i priset. Legenda säljer även biljetter till en finare kryssning med trerätters som varar i två timmar. Dessa var dock  fullbokade och bör nog bokas en tid i förväg - särskilt under turistsäsongen.
 
-## Det andra domushuset
-Endast drygt ett år efter att första domushuset revs står andra domushuset klart. Byggnaden blir mer homogen. Pelare sträcker sig från husknut till husknut. En tydlig Domusskylt installeras på hörnet mot Tempo. Huset ger ett modernarna intryck med stora fönster och en fasad med tydligt tegelmönster. På andra sidan Hörnellgatan går det att se köpmannahuset.
-![Nya domushuset](https://cust.kulturhotell.se/c61/files/fullsize/187a3c3e9aa75b992afd4bce8cca3ab7.jpg)
+Båten vi åkte med hade två våningar. Den övre våning var på taket och populärst. Jag såg till att vara i god tid och hann ta en plats närmast relingen. Vid avgång var varenda plats tagen. Några valde att stå  upp istället för att sitta på markvåningen och kolla ut genom glasfönster.
 
-## Källor
-[^1]: [Margaretas matsalar](https://www.folkrorelsearkivet.se/wp-content/uploads/2020/04/margaretas-matsalar_low.pdf)
-[^2]: https://samlingar.skellefteamuseum.se/objects/c61-156019/?sq=domus&offset=20
-[^3]: https://www.sjomanshus.se/omoss/historik/
-[^4]: https://sok.riksarkivet.se/?postid=ArkisRef+SE%2FHLA%2F1385&type=2&s=Balder
+Min rekommendation är att ställa sig i kö ca 30 min innan avfärd. Legenda har en ramp ner till en brygga och där nere finns det två gater. Det var ungefär som att stå i en kö till gaten på en flygplats. Jag var bland de första i kön och kunde därför snabbt välja en bra plats när vi blev insläppta genom gaten.
+
+Det var småkyligt under båtfärden men väldigt tyst runt omkring. Orsaken var att de flesta satt med hörlurar och lyssnade på en guidad förklaring till de olika byggnaderna och historik fakta om staden. Det positiva var att det fanns över 30 språk att välja mellan. Kvinnan som satt bredvid mig pratade inte engelska. Trots det lyckade hon på något sätt kommunicera till mig att hon behövde hjälp att byta språk på guiden. Jag bytte språk, på displayen till rätt flagga, och hon uttrycke något jag uppfattade som jakande.
+
+Men ska jag bli ärlig blev det inte mycket lyssande. Jag tror de flesta, likt mig, var häpna över den vackra vyn.
+
+<img title="" src="file:///public/images/budapest-cruise/buda-castle.jpg" alt="" data-align="inline">
+
+![](/public/images/budapest-cruise/church.jpg)
+
+![](/public/images/budapest-cruise/parlamentet.jpg)
+
+![](/public/images/budapest-cruise/parlamentet-disney.jpg)
+
+![](/public/images/budapest-cruise/universitet.jpg)

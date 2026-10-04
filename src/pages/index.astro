@@ -19,30 +19,14 @@ console.log(postsSorted[0].body)
 		<div id="hero-text" class=" md:w-1/2 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-2  pt-4 p-4 ">
 			<div class=" w-full">
 				<h1 class="text-3xl w-fit mb-2">Välkommen hit!</h1>
-				<div class="text-slate-600 pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quam cupiditate nam repudiandae reiciendis, debitis perferendis odit quos, commodi illum unde recusandae, cum culpa excepturi sed labore minus. Ad, sequi?</div>
+				<div class="text-slate-600 pb-2">Det här är en sida för äventyr utomlands med fokus på båtturer, tågresor, vackra vyer, vandringar osv. Alla mina resor är, om inte annat skrivs, ensamresor. Att resa ensam är utvecklade, bygger självförtroende och tillit till sig själv.</div>
 				<a href="/about" class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500">Om sidan</a>
 			</div>
 		</div>
 	</section> 
-	<section class="hidden"> 
-		<div class="flex flex-col gap-4 md:flex-row p-4 bg-blue-50">
-			<div class="md:w-1/3 w-full">
-				<h3 class="text-2xl">Syfte</h3>
-				<p class="mt-2">Denna sida syftar till att lyfta fram bortglömd historia med fokus på Skellefteå med omnejd. Bortglömda historier kan innebära historier om fabriker, hus,  människor, byar och levnadsöden. </p>
-			</div>
-			<div class="md:w-1/3 w-full">
-				<h3 class="text-2xl">Böcker och skrifter</h3>
-				<p class="mt-2">Det mesta som står på denna sida kommer från böcker och tidskrifter från bibliotek och museeum. Därför finns det goda förutsättningar till att gräva vidare på egen hand.</p>	
-			</div>
-			<div class="md:w-1/3 w-full ">
-				<h3 class=" text-2xl">Kontakt</h3>
-				<p class="mt-2">Det går att kontakta mig via mail. Då på adressen jesper@nvb.</p>
-			</div>
-	       	</div>
-	</section>
 
 	<section transition:name="archive" class="flex flex-col md:flex-col flex-wrap w-fit mx-auto   ">
-		<h2 class="text-3xl p-4 pb-0 w-full text-center">Min senaste post</h2> 
+	 
 		{postsSorted?.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
 	</section>
 	 <section class="p-4 pb-8">
