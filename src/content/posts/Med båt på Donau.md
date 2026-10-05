@@ -27,11 +27,12 @@ Det var småkyligt under båtfärden men väldigt tyst runt omkring. Orsaken var
 
 Men ska jag bli ärlig blev det inte mycket lyssande. Jag tror de flesta, likt mig, var häpna över den vackra vyn.
 
-<img title="" src="file:///images/budapest-cruise/buda-castle.jpg" alt="" data-align="inline">
+
+![](/images/budapest-cruise/buda-castle.jpg)
 
 ![](/images/budapest-cruise/church.jpg)
 
-![](/public/images/budapest-cruise/parlamentet.jpg)
+![](/images/budapest-cruise/parlamentet.jpg)
 
 ![](/images/budapest-cruise/parlamentet-disney.jpg)
 

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets"
 const {title, excerpt, slug, categories, publishDate, image} = Astro.props
 const today = new Date()
 import { fade } from "astro:transitions"
@@ -9,7 +10,7 @@ const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 h
             <h3  class="text-3xl text-blue-900 md:font-normal md:text-2xl hover:underline underline-offset-2  "><a href={`/posts/${slug}`}>{title}</a></h3>
             <img class="w-full h-64 object-cover" src={image} alt="title"/> 
             <div class="flex flex-row  gap-4 items-center ">
-                <img  class="rounded-full w-12 h-12 hidden" src="/images/desert.jpg" alt="title"/>
+                <Image width="50" height="50"  class="rounded-full w-12 h-12 mt-2" src="/images/desert.jpg" alt="title"/>
                 <div class="text-sm ">
                     Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} dagar sedan</time>
                     <!--<div set:html={categoriesFixed} class="flex flex-row gap-1 flex-wrap"></div> -->

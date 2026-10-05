@@ -1,14 +1,14 @@
 ---
 title: "Min Stockholmsresa"
-subTitle: "Lorem ipsum"
+subTitle: "Varför Stockholm är så vackert"
 excerpt: "Stockholm, vår älskade och samtidigt hatade huvudstad. Som född och uppvuxen längre upp i landet har föraktet för Stockholm alltid varit nära, men visst är Stockholm en vacker stad - det erkänner jag utan att tveka."
 category: ["Stockholm"]
-image: "https://m.media-amazon.com/images/I/81sMkFrM5IL._SY522_.jpg"
+image: "/images/stockholm-september/torget.jpg"
 publishDate: 2026-09-26
 
 ---
 
-### Innehåll
+## Innehåll
 
 1. <ins>[Bakgrund](#bakgrund)</ins>
 2. <ins>[Vägen till Gamla stan](#vagen-till-gamla-stan)</ins>

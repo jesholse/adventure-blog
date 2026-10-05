@@ -6,9 +6,9 @@ import {getEntry, getCollection} from "astro:content";
 const about = await getEntry("pages", "about")
 const posts = await getCollection("posts")
 const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
-postsSorted.length = 1
+postsSorted.length = 3
 const {Content} = await about.render()
-console.log(postsSorted[0].body)
+
 ---
 
 <DefaultLayout>
