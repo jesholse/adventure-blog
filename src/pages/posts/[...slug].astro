@@ -11,13 +11,17 @@ export const getStaticPaths = (async() => {
 const {post} = Astro.props;
 const {Content} = await post.render()
 console.log(post.slug)
+const d = new Date(post.data.publishDate)
+const year = d.getFullYear()
+const month = d.getMonth()
+const day = d.getDate()
 ---
-<DefaultLayout>
-     <section id="hero" class="flex flex-col lg:flex-row  bg-blue-100 ">
-		<div id="img-container" class="w-full">
+<DefaultLayout title={post.data.title}>
+     <section id="hero" class="flex flex-col lg:flex-row  md:w-3/4 w-full mx-auto p-4">
+		<div id="img-container" class="w-full ">
 			<img  class="object-contain" src={post.data.image}/>
 		</div>
-		<div id="hero-text" class="w-full  md:w-2/3 flex flex-col justify-center mx-auto p-4 lg:px-16 ">
+		<div id="hero-text" class="w-full bg-blue-100 flex flex-col justify-center mx-auto p-4 ">
             <h1 transition:name={post.data.title} class="text-3xl w-fit">{post.data.title}</h1>
 			<div class="w-fit mx-auto ">
 				<p class="text-md pb-2">{post.data.excerpt}</p>
@@ -26,7 +30,7 @@ console.log(post.slug)
                 <img class="rounded-full w-10 h-10" src="/images/desert.jpg" alt="title"/> 
                 <div class="flex flex-col text-sm gap-1">
                     <h4 >Jesper Holmlund</h4>
-                    <time>26 september 2026</time>
+                    <time>{day}/{month+1}/{year}</time>
    <!--                      <div class="flex flex-row gap-2">
                         {
                         post.data.category.map((p)=>(
@@ -45,7 +49,7 @@ console.log(post.slug)
             <div class="flex flex-col text-sm gap-1 items-end">
                 <div>
                     <h4> Av Jesper Holmlund</h4>
-                    <time>26 september 2026</time>
+                    <time>{day}/{month+1}/{year}</time>
                 </div>
                 <div class="flex flex-row gap-2">
 <!-- 			   <b>Kategorier:</b>

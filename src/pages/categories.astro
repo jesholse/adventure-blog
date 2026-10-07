@@ -1,0 +1,14 @@
+---
+import DefaultLayout  from "../layout/DefaultLayout.astro";
+import { GET } from "./api/categories.json";
+
+try{
+let res = await GET(Astro)
+const data = await res.json()
+console.log(data)
+}catch(error){
+console.error(error)
+}
+---
+
+<DefaultLayout></DefaultLayout>

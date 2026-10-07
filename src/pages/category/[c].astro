@@ -1,0 +1,12 @@
+---
+import type { GetStaticPaths } from "astro";
+import DefaultLayoutAstroComponent, { DefaultLayout } from "../../layout/DefaultLayout.astro";
+export const getStaticPaths = (async() => {
+    const url = await Astro.url;
+     const params = new URLSearchParams(url.c);
+     return params;
+}) satisfies GetStaticPaths;
+---
+<DefaultLayout>
+    
+</DefaultLayout>

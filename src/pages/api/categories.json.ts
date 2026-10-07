@@ -1,4 +1,10 @@
+
+
 import { getCollection } from "astro:content";
+import type { APIRoute } from "astro";
+try{
+  
+}catch(err){console.log(err)}
 const posts = await getCollection("posts");
 const categories = [];
 const fetchCategories = posts.map((post) => {
@@ -7,7 +13,10 @@ const fetchCategories = posts.map((post) => {
     categories.push(c);
   });
 });
-
-export async function GET({ request }) {
-  return new Response(JSON.stringify({ categories }));
+console.log(JSON.stringify(categories))
+export const GET: APIRoute = () => {
+  return new Response(JSON.stringify({categories}),{
+    headers: { 'Content-Type': 'application/json' },
+});
 }
+

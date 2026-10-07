@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { GET } from "../api/categories.json";
 import CardTemplate from "../../components/CardTemplate.astro";
 import DefaultLayout from "../../layout/DefaultLayout.astro";
 import {getCollection} from "astro:content"
@@ -10,18 +11,24 @@ export const getStaticPaths = (async({paginate}) => {
     return paginate(postsSorted, {pageSize: 5});
 }) satisfies GetStaticPaths;
 const {page} = Astro.props
-/* const res = await fetch("http://localhost:4321/api/categories.json")  
-const categories = await res.json()
-const categoriesFixed = categories?.categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
- */
+const categories = []
+try{
+let res = await GET(Astro)
+const data = await res.json()
+data.categories.map((c)=> categories.push(c))
+}catch(error){
+console.error(error)
+}
 ---
 
-<DefaultLayout>
+<DefaultLayout title="Arkiv">
 	<section transition:name="archive" class="flex flex-col md:flex-col flex-wrap" >
 		<h2 class="text-3xl p-8 pb-0 w-1/2 mx-auto text-center p-4">Arkiv</h2>
-<!--         <div  class="lg:w-1/2 mx-auto p-4 ">
-           Kategorier: <div set:html={categoriesFixed}></div>
-        </div> -->
+         <div  class="lg:w-1/2 mx-auto p-4 hidden ">
+           Kategorier: <div>
+            {categories.map((c)=>(<a href={`/category/${c}`}>{c} </a>))}
+           </div>
+        </div> 
     </section>
     <section class="flex flex-col md:flex-col flex-wrap"> 
 	{page?.data.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
