@@ -2,7 +2,7 @@
 title: "Min Stockholmsresa"
 subTitle: "Varför Stockholm är så vackert"
 excerpt: "Stockholm, vår älskade och samtidigt hatade huvudstad. Som född och uppvuxen längre upp i landet har föraktet för Stockholm alltid varit nära, men visst är Stockholm en vacker stad - det erkänner jag utan att tveka."
-category: ["Stockholm", "test"]
+category: ["Stockholm"]
 image: "/images/stockholm-september/torget.jpg"
 publishDate: 2026-09-26
 

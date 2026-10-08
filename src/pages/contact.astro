@@ -1,0 +1,13 @@
+---
+import DefaultLayout from "../layout/DefaultLayout.astro"
+---
+<DefaultLayout title="Kontakt">
+        <section class="md:w-1/2 w-full mx-auto bg-white p-4">
+            <h2  class="text-3xl pb-0 md:text-center">Kontakt</h2>
+                    <form name="contact" class="md:p-10 flex flex-col gap-4 max-w-2xl mx-auto w-full " netlify>
+                    <input placeholder="Email" name="Email" type="email" class="border-2 p-2" / required>
+                    <textarea placeholder="Message" name="Message" class="border-2 p-2 h-44" required></textarea>
+                    <button type="submit" class="p-2 px-4 border-2 border-blue-500 w-fit ">Skicka</button>
+                </form>
+    </section>
+</DefaultLayout>
