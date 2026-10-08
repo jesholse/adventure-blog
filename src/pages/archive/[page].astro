@@ -5,7 +5,6 @@ import CardTemplate from "../../components/CardTemplate.astro";
 import DefaultLayout from "../../layout/DefaultLayout.astro";
 import {getCollection} from "astro:content"
 export const getStaticPaths = (async({paginate}) => {
-    
     const posts = await getCollection("posts")
     const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
     return paginate(postsSorted, {pageSize: 5});
@@ -19,18 +18,19 @@ data.categories.map((c)=> categories.push(c))
 }catch(error){
 console.error(error)
 }
+const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
 ---
 
 <DefaultLayout title="Arkiv">
-	<section transition:name="archive" class="flex flex-col md:flex-col flex-wrap" >
-		<h2 class="text-3xl p-8 pb-0 w-1/2 mx-auto text-center p-4">Arkiv</h2>
-         <div  class="lg:w-1/2 mx-auto p-4 hidden ">
+	<section class="bg-white flex flex-col md:flex-col flex-wrap md:w-1/2 md:mx-auto" >
+		<h2  class="text-3xl pb-0 md:text-center p-4">Arkiv</h2>
+         <div  class="w-full mx-auto p-4 ">
            Kategorier: <div>
-            {categories.map((c)=>(<a href={`/category/${c}`}>{c} </a>))}
+            <div set:html={categoriesFixed} class=""></div> 
            </div>
         </div> 
     </section>
-    <section class="flex flex-col md:flex-col flex-wrap"> 
+    <section class="flex flex-col md:flex-col flex-wrap gap-4"> 
 	{page?.data.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
 	</section>
     <section class="p-4 pb-8 flex flex-row justify-center w-full ">

@@ -1,6 +1,5 @@
 ---
 import DefaultLayout from "../layout/DefaultLayout.astro"
-import Card from "../components/Card.astro"
 import CardTemplate from "../components/CardTemplate.astro";
 import {getEntry, getCollection} from "astro:content";
 const about = await getEntry("pages", "about")
@@ -12,7 +11,7 @@ const {Content} = await about.render()
 ---
 
 <DefaultLayout title="Ensamresor">
-	<section id="hero" class="flex flex-col md:flex-row  p-0 justify-center md:w-1/2 mx-auto">
+	<section id="hero" class="bg-blue-200 flex flex-col md:flex-row  p-0 justify-center md:w-1/2 mx-auto">
 		<div id="img-container" class="md:w-1/2 md:p-4">
 		 	<img alt="logo" class="" src="/images/travel.svg"/>
 		</div>
@@ -25,7 +24,7 @@ const {Content} = await about.render()
 		</div>
 	</section> 
 
-	<section transition:name="archive" class="flex flex-col md:flex-col flex-wrap w-fit mx-auto   ">
+	<section transition:name="archive" class="mt-4 flex gap-4 flex-col md:flex-col flex-wrap w-fit mx-auto   ">
 	 
 		{postsSorted?.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
 	</section>

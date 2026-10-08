@@ -2,8 +2,8 @@
 
 title: "Med båt på Donau"
 subTitle: "Budapest i oktobermörkret"
-excerpt: "Jag var i Budapest i oktober och fick uppleva en vacker båtresa på Donau. Staden lyste vackert. Särskilt parlamentbygganden som ser ut som ett slott taget ur en Disneyfilm."
-category: ["Ungern"]
+excerpt: "Jag var i Budapest i oktober och fick efter mörkrets inbrott uppleva en otrolig båtresa på Donau. Stadens byggander lyste vackert upp längs floden och den ungerska parlamentbygganden fick mig att tänka på ett slott taget ur en Disneyfilm. Här kommer en skildring av båtresan som tog cirka en timme och kostade 200 kronor. I priset ingick även en valfri dryck."
+category: ["Ungern","Båt"]
 image: "/images/budapest-cruise/parlamentet-disney.jpg"
 publishDate: 2026-10-04
 

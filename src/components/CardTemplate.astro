@@ -10,18 +10,18 @@ import { fade } from "astro:transitions"
 const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
 ---
 <div class=" lg:w-1/2 mx-auto ">
-    <article transition:name={`article-${slug}`}  class="p-4 ">
-            <h3  class="text-3xl text-blue-900 md:font-normal md:text-2xl hover:underline underline-offset-2  "><a href={`/posts/${slug}`}>{title}</a></h3>
-            <img class="w-full h-64 object-cover" src={image} alt="title"/> 
+    <article transition:name={`article-${slug}`}  class="p-4 bg-white">
+            <h3 class="text-3xl text-blue-900 md:font-normal md:text-2xl hover:underline underline-offset-2  "><a href={`/posts/${slug}`}>{title}</a></h3>
+            <img  class="w-full object-cover h-64" src={image} alt="title"/> 
             <div class="flex flex-row  gap-4 items-center border-b-2">
-                <Image width="50" height="50"  class="rounded-full w-12 h-12 my-2" src="/images/desert.jpg" alt="title"/>
+                <Image width="50" height="50"  class="rounded-full w-12 h-12 my-2" src="/images/Default_pfp.jpg" alt="picture of author"/>
                 <div class="text-sm ">
                     Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} dagar sedan</p>
                     den <time>{day}/{month+1}/{year}</time>
-                    <!--<div set:html={categoriesFixed} class="flex flex-row gap-1 flex-wrap"></div> -->
+                    <div set:html={categoriesFixed} class=""></div> 
                 </div>
             </div>
-	    <p class=" text-lg line-clamp-4 py-2">{excerpt}</p>
+	    <p class=" text-lg py-2">{excerpt}</p>
             <div>
                 <a href={`/posts/${slug}`} class="text-md text-white bg-blue-500 px-2 w-fit block hover:bg-slate-800 cursor-pointer">Läs mer</a>
             </div>

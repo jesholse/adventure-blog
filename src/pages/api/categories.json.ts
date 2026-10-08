@@ -2,9 +2,7 @@
 
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
-try{
-  
-}catch(err){console.log(err)}
+
 const posts = await getCollection("posts");
 const categories = [];
 const fetchCategories = posts.map((post) => {

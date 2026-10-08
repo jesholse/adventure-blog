@@ -1,12 +1,52 @@
 ---
 import type { GetStaticPaths } from "astro";
-import DefaultLayoutAstroComponent, { DefaultLayout } from "../../layout/DefaultLayout.astro";
+import DefaultLayout from "../../layout/DefaultLayout.astro"
+import { GET } from "../api/categories.json";
+import { getCollection } from "astro:content";
+import CardTemplate from "../../components/CardTemplate.astro";
+
 export const getStaticPaths = (async() => {
-    const url = await Astro.url;
-     const params = new URLSearchParams(url.c);
-     return params;
+const categories = [];    
+try{
+let res = await GET(Astro)
+const data = await res.json()
+data.categories.map((c)=> categories.push(c))
+}catch(error){
+console.error(error)
+}
+return categories.map((c)=>({
+    params: {c: c}
+}))
 }) satisfies GetStaticPaths;
+const {c} = Astro.params;
+const postsCategory = [];
+const posts = await getCollection("posts");
+posts.map((post)=>{
+    if(post.data.category.includes(c)){
+        postsCategory.push(post);
+    }
+})
+const categories = []
+try{
+let res = await GET(Astro)
+const data = await res.json()
+data.categories.map((c)=> categories.push(c))
+}catch(error){
+console.error(error)
+}
+const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
+
 ---
-<DefaultLayout>
-    
+<DefaultLayout title={c}>
+    <section class="bg-white flex flex-col md:flex-col flex-wrap md:w-1/2 md:mx-auto" >
+		<h2 class="text-3xl pb-0 md:text-center p-4">Kategori: {c[0].toUpperCase() + c.substring(1)}</h2>
+         <div  class="w-full mx-auto p-4 ">
+           Kategorier: <div>
+        <div set:html={categoriesFixed} class=""></div> 
+           </div>
+        </div> 
+    </section>
+    <section class="flex flex-col md:flex-col flex-wrap"> 
+	    {postsCategory.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
+	</section>
 </DefaultLayout>
