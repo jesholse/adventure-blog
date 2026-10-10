@@ -30,7 +30,7 @@ const categoriesFixed = post.data.category.map((c)=>{ return `<a class="text-sla
 		</div>
 	</section> 
  
-	<section transition:name={`article-${post.slug}`}  class="bg-white px-4  lg:w-2/4 md:mx-auto text-lg [&>p]:mb-4 [&>h2]:text-xl [&>h3]:text-slate-800 [&>h2]:text-blue-900 [&>h2]:font-medium [&>h3]:text-xl  [&>p>img]:mb-2 [&>p>sup]:text-blue-600 [&>.footnotes>ol]:list-decimal [&>.footnotes>ol]:px-2 [&>.footnotes>ol]:break-words  [&>ol>li]:text-slate-600  [&>ol]:pb-4 [&>ol>li]:underline-offset-4">
+	<section transition:name={`article-${post.slug}`}  class=" md:w-1/2 bg-white px-4  lg:w-2/4 md:mx-auto text-lg [&>p>img]:border-2 [&>p>img]:border-white  [&>p>img]:w-1/2 [&>p>img]:float-left [&>p]:mb-4 [&>h2]:text-xl [&>h3]:text-slate-800 [&>h2]:text-blue-900 [&>h2]:font-medium [&>h3]:text-xl  [&>p>sup]:text-blue-600 [&>.footnotes>ol]:list-decimal [&>.footnotes>ol]:px-2 [&>.footnotes>ol]:break-words  [&>ol>li]:text-slate-600  [&>ol]:pb-4 [&>ol>li]:underline-offset-4">
 
         <h2 class="">{post.data.subTitle}</h2>
         <Content></Content>

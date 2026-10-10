@@ -4,6 +4,7 @@ import DefaultLayout from "../../layout/DefaultLayout.astro"
 import { GET } from "../api/categories.json";
 import { getCollection } from "astro:content";
 import CardTemplate from "../../components/CardTemplate.astro";
+import  ArchiveTemplate  from "../../components/ArchiveTemplate.astro";
 
 export const getStaticPaths = (async() => {
 const categories = [];    
@@ -46,7 +47,7 @@ const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 h
            </div>
         </div> 
     </section>
-    <section class="flex flex-col md:flex-col flex-wrap"> 
-	    {postsCategory.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
+    <section class="flex flex-col md:flex-col flex-wrap items-center"> 
+	    {postsCategory.map((p)=>(<ArchiveTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></ArchiveTemplate>))}
 	</section>
 </DefaultLayout>

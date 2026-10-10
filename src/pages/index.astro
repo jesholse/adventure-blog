@@ -5,30 +5,32 @@ import {getEntry, getCollection} from "astro:content";
 const about = await getEntry("pages", "about")
 const posts = await getCollection("posts")
 const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
-postsSorted.length = 3
+postsSorted.length = 3;
 const {Content} = await about.render()
 
 ---
 
 <DefaultLayout title="Ensamresor">
-	<section id="hero" class=" flex flex-col md:flex-row  p-0 justify-center md:w-1/2 mx-auto">
-		<div id="img-container" class="md:w-1/2 md:p-4">
-		 	<img alt="logo" class="" src="/images/travel.svg"/>
-		</div>
-		<div id="hero-text" class=" md:w-1/2 flex flex-col md:flex-row justify-center md:items-center md:gap-8 gap-2  pt-4 p-4 ">
-			<div class=" w-full">
-				<h1 class="text-3xl w-fit mb-2">Välkommen hit!</h1>
-				<div class="text-slate-600 pb-2">Det här är en sida för äventyr utomlands med fokus på båtturer, tågresor, vackra vyer, vandringar osv. Alla mina resor är, om inte annat skrivs, ensamresor. Att resa ensam är utvecklade, bygger självförtroende och tillit till sig själv.</div>
-				<a href="/about" class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500">Om sidan</a>
+	<section id="hero" class=" border-2 border-sky-100 bg-sky-50">
+		<div class="flex flex-col md:flex-row  p-0 justify-center md:w-1/2 mx-auto ">
+			<div id="img-container" class="md:w-1/2 md:p-4">
+				<img alt="logo" class="" src="/images/travel.svg"/>
+			</div>
+			<div id="hero-text" class=" md:w-1/2 flex flex-col md:flex-row justify-center md:items-center   pt-4 p-4 ">
+				<div class=" w-full">
+					<h1 class="text-3xl w-fit text-sky-900">Välkommen hit!</h1>
+					<div class="text-slate-600 py-2">Det här är en sida för äventyr utomlands med fokus på båtturer, tågresor, vackra vyer, vandringar osv. Alla mina resor är, om inte annat skrivs, ensamresor. Att resa ensam är utvecklade, bygger självförtroende och tillit till sig själv.</div>
+					<a href="/about" class="text-black bg-sky-200 px-2 py-1  w-fit hover:bg-sky-300">Om sidan</a>
+				</div>
 			</div>
 		</div>
 	</section> 
-
-	<section transition:name="archive" class="mt-4 flex gap-4 flex-col md:flex-col flex-wrap w-fit mx-auto   ">
+	 <!-- <section class="p-4 pb-8">
+		<h3 class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500 mx-auto"><a href="/archive/1">Fler poster</a></h3>
+	</section> -->
+	<section transition:name="archive" class=" flex flex-basis flex-wrap gap-4 md:flex-nowrap mt-4 md:mt-2">
 	 
 		{postsSorted?.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
 	</section>
-	 <section class="p-4 pb-8">
-		<h3 class="text-white px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500 mx-auto"><a href="/archive/1">Fler poster</a></h3>
-	</section> 
+ 
 </DefaultLayout>

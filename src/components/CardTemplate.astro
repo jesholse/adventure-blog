@@ -7,23 +7,28 @@ const year = d.getFullYear()
 const month = d.getMonth()
 const day = d.getDate()
 import { fade } from "astro:transitions"
-const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
+const categoriesFixed = categories.map((c)=>{ return `<a class=" hover:underline" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
 ---
-<div class=" lg:w-1/2 mx-auto ">
-    <article transition:name={`article-${slug}`}  class="p-4 bg-white">
-            <h3 class="text-3xl text-blue-900 md:font-normal md:text-2xl hover:underline underline-offset-2  "><a href={`/posts/${slug}`}>{title}</a></h3>
-            <img  class="w-full object-cover h-64" src={image} alt="title"/> 
-            <div class="flex flex-row  gap-4 items-center border-b-2">
-                <Image width="50" height="50"  class="rounded-full w-12 h-12 my-2" src="/images/Default_pfp.jpg" alt="picture of author"/>
-                <div class="text-sm ">
+<div class="w-full md:w-1/2">
+    <article transition:name={`article-${slug}`}  class="  ">
+            <!-- <img  class="w-full object-cover h-64" src={image} alt="title"/>  -->
+            <div style=`background-image: url('${image}')` class=`bg-cover flex flex-col justify-between w-full h-72 bg-center`>
+            <h3 class="bg-black/50 text-3xl text-white md:font-normal md:text-2xl hover:underline underline-offset-2 p-2 px-4  "><a href={`/posts/${slug}`}>{title}</a></h3>
+             <div class="flex flex-row  gap-4 items-center bg-black/50 p-4">
+                <Image width="50" height="50"  class="rounded-full w-12 h-12 " src="/images/man-user-circle-icon.svg" alt="picture of author"/>
+                <div class="text-sm text-white ">
                     Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} dagar sedan</p>
                     den <time>{day}/{month+1}/{year}</time>
-                    <div set:html={categoriesFixed} class=""></div> 
+                    <div set:html={categoriesFixed} class="text-sm"></div> 
                 </div>
             </div>
-	    <p class=" text-lg py-2">{excerpt}</p>
-            <div>
-                <a href={`/posts/${slug}`} class="text-md text-white bg-blue-500 px-2 w-fit block hover:bg-slate-800 cursor-pointer">Läs mer</a>
+            </div>
+            <div class="px-4 py-2 md:p-0 md:py-2">
+                <div class=" text-lg line-clamp-4">{excerpt}</div>
+            </div>
+
+            <div class="pl-4 md:pl-0 ">
+                <a href={`/posts/${slug}`} class="text-md text-black bg-sky-200  px-2 w-fit block hover:bg-sky-300 cursor-pointer">Läs mer</a>
             </div>
     </article>
  </div>

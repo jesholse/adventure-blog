@@ -2,12 +2,13 @@
 import type { GetStaticPaths } from "astro";
 import { GET } from "../api/categories.json";
 import CardTemplate from "../../components/CardTemplate.astro";
+import  ArchiveTemplate  from "../../components/ArchiveTemplate.astro";
 import DefaultLayout from "../../layout/DefaultLayout.astro";
 import {getCollection} from "astro:content"
 export const getStaticPaths = (async({paginate}) => {
     const posts = await getCollection("posts")
     const postsSorted = posts.sort((a, b)=> a.data.publishDate - b.data.publishDate).reverse()
-    return paginate(postsSorted, {pageSize: 5});
+    return paginate(postsSorted, {pageSize: 3});
 }) satisfies GetStaticPaths;
 const {page} = Astro.props
 const categories = []
@@ -23,20 +24,20 @@ const categoriesFixed = categories.map((c)=>{ return `<a class="text-slate-500 h
 
 <DefaultLayout title="Arkiv">
 	<section class="bg-white flex flex-col md:flex-col flex-wrap md:w-1/2 md:mx-auto" >
-		<h2  class="text-3xl pb-0 md:text-center p-4">Arkiv</h2>
+		<h2  class="text-3xl pb-0 text-center p-4">Arkiv</h2>
          <div  class="w-full mx-auto p-4 ">
            Kategorier: <div>
             <div set:html={categoriesFixed} class=""></div> 
            </div>
         </div> 
     </section>
-    <section class="flex flex-col md:flex-col flex-wrap gap-4"> 
-	{page?.data.map((p)=>(<CardTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></CardTemplate>))}
+    <section class="flex flex-col md:flex-col flex-wrap items-center gap-2"> 
+	{page?.data.map((p)=>(<ArchiveTemplate title={p.data.title} excerpt={p.data.excerpt} categories={p.data.category} slug={p.slug} image={p.data.image} publishDate={p.data.publishDate}></ArchiveTemplate>))}
 	</section>
     <section class="p-4 pb-8 flex flex-row justify-center w-full ">
         <div class="flex flex-row gap-2 text-white">
-            {page?.url.prev ? <a class="px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500 cursor-pointer" href={page.url.prev}>Previous page</a> : null}
-            {page?.url.next ? <a class="px-2 py-1 bg-blue-400 w-fit hover:bg-blue-500 cursor-pointer" href={page.url.next}>Next page</a> : null} 
+            {page?.url.prev ? <a class="text-black bg-sky-200 px-2 py-1  w-fit hover:bg-sky-300" href={page.url.prev}>Föregående sida</a> : null}
+            {page?.url.next ? <a class="text-black bg-sky-200 px-2 py-1  w-fit hover:bg-sky-300" href={page.url.next}>Nästa sida</a> : null} 
         </div>
     </section>
 </DefaultLayout>

@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets"
+const {title, excerpt, slug, categories, publishDate, image} = Astro.props
+const today = new Date()
+const d = new Date(publishDate)
+const year = d.getFullYear()
+const month = d.getMonth()
+const day = d.getDate()
+import { fade } from "astro:transitions"
+const categoriesFixed = categories.map((c)=>{ return `<a class=" hover:text-slate-800" href="/category/${c}">${c[0].toUpperCase() + c.substring(1)}</a>`}).join(", ")
+---
+<div class=" lg:w-1/2">
+    <article transition:name={`article-${slug}`}  class="px-4 ">
+            <h3 class="text-3xl md:font-normal md:text-2xl hover:underline underline-offset-2 "><a href={`/posts/${slug}`}>{title}</a></h3>
+            <!-- <img  class="w-full object-cover h-64" src={image} alt="title"/>  -->
+     
+            <div class=" ">
+                <div class=" text-md line-clamp-2">{excerpt}</div>
+            </div>
+
+            <div class="pb-2">
+                <a href={`/posts/${slug}`} class="text-md text-black bg-sky-200 px-1 w-fit block hover:bg-sky-300 cursor-pointer">Läs mer</a>
+            </div>
+    </article>
+ </div>

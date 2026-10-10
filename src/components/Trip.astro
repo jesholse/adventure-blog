@@ -1,0 +1,9 @@
+---
+const {flag, country, home, away} = Astro.props
+---
+
+<div class="flex flex-row text-lg bg-sky-100 w-full gap-2  even:bg-white odd:bg-gray-100">
+    <div class="text-xl basis-1/3">{flag +" " + country}</div>
+    <div class="text-xl basis-1/3">{away}</div>
+    <div class="text-xl basis-1/3">{home}</div>
+</div>

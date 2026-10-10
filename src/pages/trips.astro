@@ -1,0 +1,13 @@
+---
+import DefaultLayout from "../layout/DefaultLayout.astro"
+import { defineCollection } from "astro:content";
+import   Trip  from "../components/Trip.astro";
+---
+
+<DefaultLayout>
+    <section class="flex flex-col md:flex-col  p-0 justify-center md:w-1/2 mx-auto">
+        <Trip flag="🇭🇺" country="Ungern" away="2026-09-30" home="2026-10-02" ></Trip>
+         <Trip flag="🇦🇹" country="Österrike" away="2026-10-30" home="2026-11-01" ></Trip>
+        <Trip flag="🇭🇺" country="Ungern" away="2026-09-30" home="2026-10-02" ></Trip>
+    </section>
+</DefaultLayout>
