@@ -17,7 +17,7 @@ const categoriesFixed = categories.map((c)=>{ return `<a class=" hover:underline
              <div class="flex flex-row  gap-4 items-center bg-black/50 p-4">
                 <Image width="50" height="50"  class="rounded-full w-12 h-12 " src="/images/man-user-circle-icon.svg" alt="picture of author"/>
                 <div class="text-sm text-white ">
-                    Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))} dagar sedan</p>
+                    Postat för <time>{Math.round((today - new Date(publishDate)) /(1000 * 60 * 60 * 24))-1} dagar sedan</p>
                     den <time>{day}/{month+1}/{year}</time>
                     <div set:html={categoriesFixed} class="text-sm"></div> 
                 </div>
