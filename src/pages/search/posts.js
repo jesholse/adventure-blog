@@ -12,7 +12,7 @@ export async function GET({request, params, redirect}){
 	const hx = request.headers.get("hx-request")
 	const url = new URL(request.url)
 	const q = url.searchParams.get("q")
-	const filtered = posts.filter(p => p.data.title.toUpperCase().includes(q.toUpperCase()))
+	const filtered = posts.filter(p => p.data.excerpt.toUpperCase().includes(q.toUpperCase()))
  	console.log(filtered)
  	if(q.length < 1 ){
 	 return new Response(
